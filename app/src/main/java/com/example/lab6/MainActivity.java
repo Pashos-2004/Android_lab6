@@ -1,6 +1,8 @@
 package com.example.lab6;
 
 import android.Manifest;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CheckPermission();
+
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
+        int[] widgetsIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, AudioWidget.class));
+        appWidgetManager.notifyAppWidgetViewDataChanged(widgetsIds,R.layout.audio_widget);
+
     }
 }

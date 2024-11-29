@@ -32,11 +32,13 @@ public class AudioRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     @Override
     public void onCreate() {
+        Log.i("Loggi","Тут");
         loadAudioData();
     }
 
     @Override
     public void onDataSetChanged() {
+        Log.i("Loggi","Здесь");
         loadAudioData();
     }
 
@@ -52,7 +54,7 @@ public class AudioRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     @Override
     public RemoteViews getViewAt(int position) {
-        if (position < 0 || position >= audioItems.size()) return null;
+
 
         AudioItem item = audioItems.get(position);
         RemoteViews views = new RemoteViews(mContext.getPackageName(), R.layout.audio_widget_list_item);
@@ -92,7 +94,7 @@ public class AudioRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
                 MediaStore.Audio.Media.ARTIST
         };
 
-        Log.i("dfd","VSdggsfrw");
+        Log.i("Loggi","GETDATA");
 
         //Cursor cursor = resolver.query(uri, projection, null, null, null);
         Cursor cursor = mContext.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
