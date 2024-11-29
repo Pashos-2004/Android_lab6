@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">lab6</string>
+    <string name="widget_name">Audio widget</string>
+    <string name="widget_text">Здесь ваши аудио файлы</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">Этот виджет показывает вам ваши аудио файлы</string>
+</resources>
